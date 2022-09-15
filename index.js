@@ -2,6 +2,8 @@ import express from "express";
 import productRoutes from "./routes/index.js";
 import cors from "cors";
 import path from 'path';
+const server_port = process.env.PORT || 3000;
+const host = '0.0.0.0';
 const app = express();
 
 try {
@@ -19,4 +21,4 @@ console.log(buildPath);
 app.use(express.static(buildPath));
 app.use('/products', productRoutes);
 
-app.listen(5000, () => console.log('Server running at port 5000'));
+app.listen(server_port, host,  () => console.log(`Server running at port ${server_port}`));
