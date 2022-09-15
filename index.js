@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.urlencoded());
 app.use(express.json());
 const __dirname = path.resolve(path.dirname(''));
-const buildPath = path.join(__dirname, '..', 'production');
+const buildPath = path.join(__dirname, '.', 'production');
 console.log(buildPath);
 app.use(express.static(buildPath));
 app.use('/products', productRoutes);
